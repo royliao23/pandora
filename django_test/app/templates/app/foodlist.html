@@ -1,0 +1,20 @@
+<html>
+<head>
+</head>
+<body>
+{% if all %}
+<table class="messages">
+  
+    {% for messageinfo in all %}
+    <tr>
+     <td> {{messageinfo.name}}</td> 
+     <td> {{messageinfo.favoriteFoods}}</td> 
+    
+    
+      </tr>
+    {% endfor %}
+</table>
+
+{% endif %}
+</body>
+</html>

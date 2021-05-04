@@ -1,0 +1,58 @@
+@media print
+{
+    .non-printable { display: none; }
+    .printable { display: block; }
+}
+input[type=button], input[type=submit], input[type=reset], button{
+  background-color: rgb(161, 117, 117);
+  border: 1;
+  color: black;
+  padding: 8px 22px;
+  text-decoration: none;
+  margin: 12px 15px;
+  cursor: pointer;
+  
+}
+ul {
+  list-style-type: none;
+
+ }
+ th {
+  background-color: turquoise;
+
+ }
+ table, td, th {  
+ 
+  text-align: center;
+  vertical-align: middle;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+
+  width: auto;
+  min-width: 100%;
+  table-layout: fixed;
+}
+
+th, td {
+  
+  border: solid turquoise 1px;
+}
+ .wrapper2 {
+
+  overflow: auto;
+}
+
+
+
+
+
+  body {font-family: Arial, Helvetica, sans-serif;}
+  
+  /* The Modal (background) */
+  
+  
+  /* Modal Content */
+  

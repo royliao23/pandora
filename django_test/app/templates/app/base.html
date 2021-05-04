@@ -1,0 +1,21 @@
+
+
+{% load static  %}
+
+{% block css %}
+  {{ block.super }}
+
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'app/scss/main.scss' %}">
+    <link rel="stylesheet" href="{% static 'app/css/responsive.css' %}">
+  
+{% endblock %}
+
+{% block content %}
+    {% block main %}{% endblock %}
+    {% include 'app/footer.html' %}
+{% endblock %}
+
+{% block js %}
+  {{ block.super }}
+  <script src="{% static 'app/js/main.js' %}"></script>
+{% endblock %}

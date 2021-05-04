@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./django_test
+    command: gunicorn django_test.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - staticfiles:/home/staticfiles:consistent
+    ports:
+      - 8000
+    
+    environment: 
+      - DB_HOST=db
+      - DB_NAME=web
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+    depends_on: 
+      - db
+    
+    #command: gunicorn django_test.wsgi:application --bind 0.0.0.0:8000
+    #volumes:
+    #  - static_volume:/django_test/static
+    #expose:
+    #  - 8000
+  db:
+    image: postgres:12.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment: 
+      - POSTGRES_DB=web
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    
+  nginx:
+    build: ./nginx
+    #volumes:
+    #  - static_volume:/home/django_test/static
+    #  - media_volume:/home/django_test/media
+    ports:
+      - 1337:80
+    volumes:
+      - staticfiles:/home/staticfiles:consistent
+    depends_on:
+      - web
+    
+volumes:
+  postgres_data:
+  staticfiles:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: c:/code/django_project/django_test/static

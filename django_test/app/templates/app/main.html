@@ -1,0 +1,50 @@
+
+
+{% load static %}
+
+{% block main %}
+<header id="home" class="blog-hero-area">
+   <div class="overlay-light"></div>
+   <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
+      
+   </nav>
+   <div class="container">
+      <div class="row justify-content-md-center">
+         <div class="col-md-10">
+            <div class="contents text-center">
+               <h2 class="wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Pandora... Are My Citizens Still Okay There?</h2>
+               <div class="post-meta">
+                  <ul>
+                     <li><i class="lni-calendar"></i> <a href="/api/company/?format=json">Employment data</a> | <a href="/apishowcompany/21/"> Search employment </a></li>
+                     <li><i class="lni-user"></i> <a href="/api/people/?format=json">Social life</a> | <a href="/apishowalive/77/69">Search friends</a></li>
+                     <li><i class="lni-bubble"></i> <a href="/api/people/">What do they eat? </a> | <a href="/apishowfood/15/">Search foods</a></li>
+                  </ul>
+               </div>
+               (Please change to your search person code - pk at the end of url :))
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+<body>
+<div id="blog-single">
+   <div class="container">
+      <div class="row justify-content-md-center">
+         <div class="col-md-10">
+            <div class="blog-post">
+               <div class="post-thumb">
+                  <img src="{% static 'app/img/blog/blog-1-big.jpg' %}" alt="">
+               </div>
+               <div class="post-content">
+                  <p># Pandora Challenge
+                     Pandora is a mysterious planet. Those types of planets can support human life, for that reason the president of the Handsome Jack decides to send some people to colonise this new planet and
+                     reduce the number of people in their own country. After 10 years, the new president wants to know how the new colony is growing, and wants some information about his citizens. Hence API is built here by <a href="http://ec2-18-218-25-96.us-east-2.compute.amazonaws.com/">Roy Liao </a>to provide the desired information.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+   </div>
+</div>
+{% endblock %}
+</body>
